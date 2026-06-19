@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bon Appetit CHSV</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER (Estilo K&J: Logo izq, Nav centro, Acciones der) -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="img/LogoBun2.jpg" alt="Bon Appetit CHSV" class="header-logo">
+            </a>
+
+            <nav class="header-nav">
+                <a href="javascript:void(0)" onclick="filterMenu('all')">Menú</a>
+                <a href="javascript:void(0)" onclick="filterMenu('burgers')">Hamburguesas</a>
+                <a href="javascript:void(0)" onclick="filterMenu('tacos')">Tacos</a>
+                <a href="javascript:void(0)" onclick="filterMenu('sides')">Acompañamientos</a>
+                <a href="javascript:void(0)" onclick="filterMenu('drinks')">Bebidas</a>
+                <a href="javascript:void(0)" onclick="filterMenu('desserts')">Postres</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="login-btn"><i class="fas fa-user"></i> Iniciar Sesión</a>
+                <a href="carrito.html" class="cart-icon-wrapper">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CARRUSEL HERO -->
+    <section class="hero">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="img/banerburguer1.jpg" alt="Sabor que se siente">
+                <div class="slide-text"><h2>Best in Town</h2><p>Sabor que se siente y se comparte</p></div>
+            </div>
+            <div class="carousel-slide">
+                <img src="img/banerburguer2.png" alt="Tasty Burger">
+                <div class="slide-text"><h2>Tasty Burger</h2><p>Las mejores hamburguesas de Chalatenango</p></div>
+            </div>
+            <div class="carousel-slide">
+                <img src="img/banerburguer3.jpg" alt="The Burger House">
+                <div class="slide-text"><h2>The Burger House</h2><p>Visítanos de 11:00 AM a 7:30 PM</p></div>
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- BUSCADOR -->
+    <div class="search-wrapper">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="¿Qué antojo buscas hoy? (Ej: Burger, Tacos)" onkeyup="searchMenu()">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+
+    <!-- MENÚ DE PRODUCTOS -->
+    <section class="menu-section" id="menu">
+        <h2 class="section-title">Nuestros <span>Productos</span></h2>
+        <div class="menu-grid" id="menuGrid">
+            <!-- JS cargará los productos aquí -->
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO (Mapa Izquierda, Texto Derecha) -->
+    <section id="contacto" class="contact-section">
+        <h2 class="section-title">Encuéntranos</h2>
+        
+        <div class="contact-container">
+            <!-- Columna Izquierda: Mapa -->
+            <div class="map-column">
+                <div class="map-box">
+                    <div class="map-wrapper">
+                        <!-- Embed del Mapa de Google -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.6723948547897!2d-88.938397!3d14.041236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6359e48e6c4f99%3A0x1f4d9451c8c8b2a4!2sBon%20Appetit%20CH%20SV!5e0!3m2!1ses!2ssv!4v1718900000000!5m2!1ses!2ssv" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Cómo llegar -->
+            <div class="text-column">
+                <h3>Cómo llegar</h3>
+                <div class="info-item">
+                    <p><i class="fas fa-map-pin" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>Dirección:</strong></p>
+                    <p style="margin-top: 5px; padding-left: 30px;">Ferretería Don Genaro, Cuarta calle Oriente, Barrio San Antonio a 10 metros de, Chalatenango.</p>
+                </div>
+                <div class="info-item" style="margin-top: 20px;">
+                    <p><i class="fas fa-clock" style="color: var(--primary-color); margin-right: 10px;"></i> <strong>Horario:</strong></p>
+                    <p style="margin-top: 5px; padding-left: 30px;">Lunes a Sábado de 11:00 AM a 7:30 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER Y REDES -->
+    <footer>
+        <div class="footer-socials">
+            <p>Síguenos en nuestras redes:</p>
+            <div class="icons-container">
+                <a href="https://www.facebook.com/BonAppetitCHSV/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/bon_appetit_chsv" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/50372570825" target="_blank" class="whatsapp-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bon Appetit CHSV. Todos los derechos reservados. Demo para presentación.</p>
+        </div>
+    </footer>
+
+    <!-- BURBUJA WHATSAPP -->
+    <a href="https://wa.me/50372570825" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

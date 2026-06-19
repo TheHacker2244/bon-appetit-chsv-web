@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Bon Appetit CHSV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Importamos el CSS principal para el Header -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Estilos específicos del login -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Header idéntico al index.html -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="img/LogoBun2.jpg" alt="Bon Appetit CHSV" class="header-logo">
+            </a>
+            <nav class="header-nav">
+                <a href="index.html">Menú</a>
+                <a href="index.html#menu">Productos</a>
+                <a href="index.html#contacto">Contacto</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="login-btn"><i class="fas fa-user"></i> Iniciar Sesión</a>
+                <a href="carrito.html" class="cart-icon-wrapper">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="login-wrapper">
+        <!-- Flecha de retorno -->
+        <a href="index.html" class="back-arrow">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <div class="login-box">
+            <!-- Logo del negocio -->
+            <img src="img/LogoBun2.jpg" alt="Bon Appetit" class="logo-login">
+            <h2>¡Bienvenido!</h2>
+            <p class="subtitulo">Regístrate para calificar y dejar reseñas</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="ejemplo@gmail.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Mínimo 6 caracteres" required>
+                </div>
+                <button type="submit" id="submitBtn">Iniciar Sesión</button>
+            </form>
+
+            <p id="toggle-text" style="margin-top: 15px; font-size: 14px;">
+                ¿No tienes cuenta? 
+                <a href="#" id="toggleMode">Regístrate aquí</a>
+            </p>
+            <p id="mensaje" style="font-size: 14px; margin-top: 10px;"></p>
+        </div>
+    </div>
+
+       <!-- Script exclusivo para actualizar el contador del carrito en el Login -->
+          <script>
+            document.addEventListener("DOMContentLoaded", function() {
+             function actualizarBadgeLogin() {
+            const cartData = localStorage.getItem('bonAppetitCart');
+            const cart = cartData ? JSON.parse(cartData) : [];
+            
+            // Contamos tanto la variable "cantidad" (usada en carrito.js) como "qty" (usada en index.js)
+            const count = cart.reduce((sum, item) => sum + (item.cantidad || item.qty || 1), 0);
+            
+            const badge = document.getElementById('cart-count');
+            if(badge) {
+                badge.innerText = count;
+                badge.style.display = count > 0 ? 'flex' : 'none';
+            }
+            }
+            actualizarBadgeLogin();
+            });
+       </script>
+
+    <script src="login.js"></script>
+</body>
+</html>

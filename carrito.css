@@ -1,0 +1,205 @@
+.carrito-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px 30px 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#lista-productos-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Estilo de cada producto (Fila horizontal) */
+.item-carrito {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px;
+    border: 1px solid #ebebeb;
+    border-radius: 12px;
+    background: #fafafa;
+    flex-wrap: wrap; /* Responsive */
+}
+
+.item-carrito img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.item-carrito .info-producto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.item-carrito .info-producto h4 {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+.item-carrito .info-producto .descripcion {
+    font-size: 13px;
+    color: #777;
+    margin-top: 2px;
+    line-height: 1.4;
+}
+
+/* Precio (Amarillo) */
+.item-carrito .precio {
+    font-weight: bold;
+    color: #FFB300; /* Amarillo */
+    font-size: 16px;
+    margin: 0 15px;
+    white-space: nowrap;
+}
+
+/* Controles de cantidad (Botones redondos rojos) */
+.item-carrito .cantidad-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-carrito .cantidad-control button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: #E53935; /* Rojo */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.item-carrito .cantidad-control button:hover {
+    background: #C62828;
+    transform: scale(1.05);
+}
+
+.item-carrito .cantidad-control span {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Botón de eliminar (Basurero) */
+.item-carrito .eliminar-item {
+    color: #d32f2f;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 15px;
+    transition: 0.2s;
+}
+.item-carrito .eliminar-item:hover {
+    transform: scale(1.2);
+    color: #b71c1c;
+}
+
+/* Resumen del pedido (Estilo limpio) */
+.carrito-resumen {
+    background: #f7f8fa;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid #ebebeb;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.carrito-resumen h3 {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #333;
+    font-size: 20px;
+}
+
+.resumen-linea {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+}
+.resumen-linea span:last-child {
+    color: #E53935;
+}
+
+.acciones-resumen {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+/* Botón de WhatsApp (Verde) */
+.btn-pagar {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-pagar:hover { background: #128C7E; }
+
+/* Botón de Seguir comprando (Rojo bordeado) */
+.btn-seguir-comprando {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid #E53935;
+    background: transparent;
+    color: #E53935;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.btn-seguir-comprando:hover {
+    background: #E53935;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .item-carrito {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .item-carrito .info-producto {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .item-carrito .precio {
+        margin-left: 0;
+    }
+    .acciones-resumen {
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .btn-pagar, .btn-seguir-comprando {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito - Bon Appetit CHSV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="carrito.css">
+</head>
+<body>
+
+    <!-- HEADER (Idéntico al index) -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="img/LogoBun2.jpg" alt="Bon Appetit CHSV" class="header-logo">
+            </a>
+            <nav class="header-nav">
+                <a href="index.html">Menú</a>
+                <a href="index.html#menu">Productos</a>
+                <a href="index.html#contacto">Contacto</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="login-btn"><i class="fas fa-user"></i> Iniciar Sesión</a>
+                <a href="cart.html" class="cart-icon-wrapper">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="carrito-container">
+        <h1 class="section-title">Mi <span>Carrito</span></h1>
+        
+        <div id="carrito-vacio" style="display: none;">
+            <p>Tu carrito está vacío. ¡Agrega algo delicioso!</p>
+            <a href="index.html" class="btn-seguir-comprando">Ver menú</a>
+        </div>
+
+        <div id="carrito-contenido">
+            <!-- Aquí se insertarán los productos -->
+            <div id="lista-productos-carrito"></div>
+
+            <!-- Resumen del pedido (Estilo K&J) -->
+            <div class="carrito-resumen">
+                <h3>Resumen del pedido</h3>
+                <div class="resumen-linea">
+                    <span>Total:</span>
+                    <span id="total-carrito">$0.00</span>
+                </div>
+                <div class="acciones-resumen">
+                    <button id="btn-finalizar-compra" class="btn-pagar">Finalizar compra por WhatsApp</button>
+                    <a href="index.html" class="btn-seguir-comprando">Seguir comprando</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="carrito.js"></script>
+</body>
+</html>
