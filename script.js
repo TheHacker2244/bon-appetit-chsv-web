@@ -99,7 +99,8 @@ function updateCartBadge() {
         return sum + q;
     }, 0);
     
-    const badge = document.getElementById('cartCount');
+    // 👇 CAMBIO AQUÍ: cambié 'cartCount' por 'cart-count' para que coincida con tu HTML
+    const badge = document.getElementById('cart-count'); 
     if(badge) {
         badge.innerText = count;
         badge.style.display = count > 0 ? 'flex' : 'none';
